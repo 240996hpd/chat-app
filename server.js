@@ -15,12 +15,11 @@ const users = new Map();
 
 // Handle Socket.IO connections
 io.on('connection', (socket) => {
-    console.log('A user connected');
-
     // Handle user joining
     socket.on('join', (username) => {
         users.set(socket.id, username);
         io.emit('user joined', username);
+        console.log(`A user ${username} connected`);
     });
 
     // Handle chat messages
