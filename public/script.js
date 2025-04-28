@@ -36,7 +36,7 @@ messageForm.addEventListener('submit', (e) => {
 socket.on('chat message', (data) => {
     const messageElement = document.createElement('div');
     messageElement.className = 'message';
-    messageElement.innerHTML = `<span class="username">${data.username}:</span> ${data.message}`;
+    messageElement.innerHTML = `<span class="username">${data.username}:</span> <span class="timestamp">[${data.timestamp}]</span> ${data.message}`;
     messages.appendChild(messageElement);
     messages.scrollTop = messages.scrollHeight;
 });

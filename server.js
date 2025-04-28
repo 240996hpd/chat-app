@@ -25,7 +25,8 @@ io.on('connection', (socket) => {
     // Handle chat messages
     socket.on('chat message', (message) => {
         const username = users.get(socket.id);
-        io.emit('chat message', { username, message });
+        const timestamp = new Date().toLocaleTimeString();
+        io.emit('chat message', { username, message, timestamp });
     });
 
     // Handle disconnection
