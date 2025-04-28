@@ -1,95 +1,96 @@
-# Simple Real-time Chat Application
+# Simple Real-Time Chat App
 
-A simple real-time chat application built with Node.js, Express, and Socket.IO.
+A beginner-friendly, real-time chat application built with **Node.js**, **Socket.io**, and **HTML/CSS**.  
+Users can join with a username, send and receive messages instantly, and see when others join or leave the chat.
 
-## Features
+---
 
-- Real-time messaging
-- Clean and modern UI
-- Easy to use interface
-- No database required (messages are not persisted)
+## 🚀 Features
 
-## Prerequisites
+- **Real-time messaging:** Instantly send and receive messages with all connected users.
+- **Usernames:** Join the chat with your own username.
+- **User notifications:** See when users join or leave the chat.
+- **Responsive UI:** Clean and simple interface that works on desktop and mobile.
 
-- Node.js (v14 or higher)
-- npm (Node Package Manager)
+---
 
-## Installation
+## 🛠️ Technologies Used
 
-1. Clone the repository:
+- [Node.js](https://nodejs.org/)
+- [Express](https://expressjs.com/)
+- [Socket.io](https://socket.io/)
+- HTML, CSS, JavaScript
+
+---
+
+## 📦 Getting Started
+
+### 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/simple-chat-app.git
-cd simple-chat-app
+git clone https://github.com/harshitpandey/chat-app.git
+cd chat-app
 ```
 
-2. Install dependencies:
+### 2. **Install dependencies**
 ```bash
 npm install
 ```
 
-3. Start the server:
+### 3. **Start the server**
+For one-time run:
 ```bash
 node server.js
 ```
-
-4. Open your browser and navigate to:
+For auto-restart on changes (recommended for development):
+```bash
+npx nodemon server.js
 ```
-http://localhost:3000
+
+### 4. **Open the app**
+Go to [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🖥️ Usage
+
+1. Enter a username and click **Join**.
+2. Type your message and press **Send**.
+3. See messages and notifications in real time as others join, chat, or leave.
+
+---
+
+## 📁 Project Structure
+
 ```
-
-## Usage
-
-1. Open multiple browser windows/tabs to `http://localhost:3000`
-2. Start chatting! Messages will appear in real-time across all connected clients
-
-## Project Structure
-
-```
-simple-chat-app/
+chat-app/
 ├── public/
-│   └── index.html      # Frontend HTML and client-side JavaScript
-├── server.js           # Express and Socket.IO server
-├── package.json        # Project dependencies
-└── README.md           # Project documentation
+│   ├── index.html
+│   ├── script.js
+│   ├── style.css
+│   └── styles.css
+├── server.js
+├── package.json
+└── README.md
 ```
 
-## Technologies Used
+## 💡 Customization Ideas
 
-- Node.js
-- Express.js
-- Socket.IO
-- HTML5
-- CSS3
-- JavaScript (ES6+)
+- Add message timestamps
+- Show a list of online users
+- Support private rooms or direct messages
+- Add emojis or file sharing
 
-## License
+## 🤝 Contributing
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-## Contributing
+## 📄 License
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+[MIT](LICENSE)
 
+## 🙋‍♂️ Questions?
 
-**This project defines:**
-
-1. Workflow (workflows.py) - Defines the logic for running shell commands.
-2. Activity (activities.py) - Executes the shell command securely.
-3. Worker (worker.py) - Runs the Temporal worker that listens for workflow requests.
-
-
-**How to run it locally:**
-
-1. make Install : Install dependencies
-2. Start Temporal server: https://confluence.internal.salesforce.com/display/TEMPORAL/Run+Temporal+Locally
-3. start worker: make start-worker
-4. Execute a worflow: <br>
-  a. Using Makefile: make run-workflow CMD="ls -lhrt" <br>
-  b. Direct python execution: python run_workflow.py ls-lhrt
+Feel free to open an issue or reach out!
   
   
   
