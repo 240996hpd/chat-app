@@ -13,12 +13,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Store connected users
 const users = new Map();
 
+// Helper function to get all usernames
+function getAllUsernames() {
+    return Array.from(users.values());
+}
+
 // Handle Socket.IO connections
 io.on('connection', (socket) => {
     // Handle user joining
     socket.on('join', (username) => {
         users.set(socket.id, username);
         io.emit('user joined', username);
+        io.emit('users list', getAllUsernames()); // Send updated user list
         console.log(`A user ${username} connected`);
     });
 
@@ -35,6 +41,7 @@ io.on('connection', (socket) => {
         if (username) {
             users.delete(socket.id);
             io.emit('user left', username);
+            io.emit('users list', getAllUsernames()); // Send updated user list
         }
         console.log('A user disconnected');
     });

@@ -41,4 +41,45 @@ button:hover {
     color: #888;
     font-size: 0.9em;
     margin-left: 8px;
+}
+
+#chat-layout {
+    display: flex;
+    gap: 20px;
+}
+
+#users-list {
+    width: 180px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    height: 480px;
+    margin-right: 10px;
+    overflow-y: auto;
+}
+
+#users-list h3 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #1a73e8;
+}
+
+#users {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#users li {
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 1em;
+}
+
+#chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 } 

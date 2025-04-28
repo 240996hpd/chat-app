@@ -6,6 +6,7 @@ const chatContainer = document.getElementById('chat-container');
 const messageForm = document.getElementById('message-form');
 const messageInput = document.getElementById('message');
 const messages = document.getElementById('messages');
+const usersList = document.getElementById('users');
 
 // Connect to Socket.IO server
 const socket = io();
@@ -57,4 +58,14 @@ socket.on('user left', (username) => {
     notification.textContent = `${username} left the chat`;
     messages.appendChild(notification);
     messages.scrollTop = messages.scrollHeight;
+});
+
+// Listen for users list updates
+socket.on('users list', (usernames) => {
+    usersList.innerHTML = '';
+    usernames.forEach((user) => {
+        const li = document.createElement('li');
+        li.textContent = user;
+        usersList.appendChild(li);
+    });
 }); 
